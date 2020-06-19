@@ -21,21 +21,27 @@ const App = () => {
     <View style={styles.container}>
       <SafeAreaView />
       <StatusBar barStyle="dark-content" />
-
-      <TouchableOpacity
-        onPress={() => {
-          alert('HEllo World');
-        }}
-        style={styles.button}>
-        <Text>Press Me </Text>
-      </TouchableOpacity>
+      {Button()}
     </View>
+  );
+};
+
+const Button = () => {
+  return (
+    <TouchableOpacity
+      onPress={() => {
+        alert('HEllo World');
+      }}
+      style={styles.button}>
+      <Text>Press Me hello </Text>
+    </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    // backgroundColor: 'yellow',
     justifyContent: 'center',
     alignItems: 'center',
   },
