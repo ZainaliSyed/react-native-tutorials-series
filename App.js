@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, {useState} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -17,24 +17,31 @@ import {
 } from 'react-native';
 
 const App = () => {
+  const [count, setCount] = useState(0);
+  const [name, setName] = useState('');
   return (
     <View style={styles.container}>
       <SafeAreaView />
       <StatusBar barStyle="dark-content" />
-      {Button()}
-    </View>
-  );
-};
+      <Text> Count : {count}</Text>
 
-const Button = () => {
-  return (
-    <TouchableOpacity
-      onPress={() => {
-        alert('HEllo World');
-      }}
-      style={styles.button}>
-      <Text>Press Me hello </Text>
-    </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => {
+          setCount(count + 1);
+        }}
+        style={styles.button}>
+        <Text>Press Me Count </Text>
+      </TouchableOpacity>
+
+      <Text style={{marginVertical: 20}}> Hello : {name}</Text>
+      <TouchableOpacity
+        onPress={() => {
+          setName('Andy ');
+        }}
+        style={styles.button}>
+        <Text>Press Me Name</Text>
+      </TouchableOpacity>
+    </View>
   );
 };
 
